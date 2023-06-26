@@ -1,16 +1,19 @@
 package solid;
 
-import solid.srp.Point;
 import solid.srp.Square;
+import solid.srp.SquareDraw;
 
 public class Main {
     public static void main(String[] args) {
         int side = 5;
         Square square = new Square(side);
-        System.out.printf("Площадь фигуры: %d \n", square.getArea());
-        square.draw();
-        square.zoom(1.5f);
+        SquareDraw squareDraw = new SquareDraw(side);
+        squareDraw.draw();
+        System.out.printf("\n Площадь фигуры: %d \n", square.getArea());
+
+        squareDraw.setSide(square.getSide() *2);
+        squareDraw.draw();
         System.out.printf("\nПлощадь фигуры: %d \n", square.getArea());
-        square.draw();
+
     }
 }
