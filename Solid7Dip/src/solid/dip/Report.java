@@ -6,6 +6,13 @@ import java.util.List;
 public class Report{
     private List<ReportItem> items;	// Отчетные данные
 
+    private Reportable reportable;
+
+    public Report(Reportable reportable) {
+        this.reportable = reportable;
+    }
+
+
     // расчет отчетных данных
     public void calculate(){
         items =  new ArrayList<ReportItem>();
@@ -14,7 +21,6 @@ public class Report{
     }
 
     public void output(){
-        PrintReport reportPrint = new PrintReport();
-        reportPrint.output(items);
+        reportable.output(items);
     }
 }
