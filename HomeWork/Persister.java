@@ -1,11 +1,13 @@
-public class Persister{
-	private User user;
-	
-	public Persister(User user){
-		this.user = user;
+public class Persister implements Saveable{
+	private UserAbstract userAbstract;
+
+	public Persister(UserAbstract userAbstract){
+		this.userAbstract = userAbstract;
 	}
 	
 	public void save(){
-		System.out.println("Save user: " + user.getName());
+		System.out.println("Save user: " + userAbstract.getName());
 	}
 }
+
+
